@@ -12,6 +12,7 @@ class NERModel(BaseModel):
     """Specialized class of Model for NER"""
 
     def __init__(self, config):
+        tf.reset_default_graph()
         super(NERModel, self).__init__(config)
         self.idx_to_tag = {idx: tag for tag, idx in
                            self.config.vocab_tags.items()}
