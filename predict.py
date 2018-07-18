@@ -31,4 +31,4 @@ def predict_entities(text):
 if __name__ == '__main__':
     while True:
         print 'Enter text'
-        print predict_entities(raw_input)()
+        print predict_entities(raw_input())
