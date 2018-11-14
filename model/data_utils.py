@@ -207,7 +207,7 @@ def export_trimmed_glove_vectors(vocab, glove_filename, trimmed_filename, dim):
     embeddings = np.zeros([len(vocab), dim])
     with open(glove_filename) as f:
         for line in f:
-            line = line.strip().split(' ')
+            line = line.strip().split()
             word = line[0]
             embedding = [float(x) for x in line[1:]]
             if word in vocab:
