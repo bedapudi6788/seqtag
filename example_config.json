@@ -1,0 +1,9 @@
+{
+	"data_folder": "/Users/bedapudi/sequence_tagging/test_data/",
+	"dir_output": "/Users/bedapudi/sequence_tagging/test_output/",
+	"glove_path": "/Users/bedapudi/sequence_tagging/glove.6B.300d.txt",
+	"nepochs": 15,
+	"batch_size": 32,
+	"dropout": 0.2,
+	"nepoch_no_imprv": 3
+}
