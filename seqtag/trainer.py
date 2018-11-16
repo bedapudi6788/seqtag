@@ -1,6 +1,6 @@
 import os
 import json
-import .data_builder
+from . import data_builder
 from .data_utils import CoNLLDataset
 from .ner_model import NERModel
 from .config import Config
