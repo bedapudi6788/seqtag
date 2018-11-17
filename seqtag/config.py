@@ -26,7 +26,7 @@ class Config():
         Config.filename_glove = glove_path
         Config.dir_model  = os.path.join(dir_output, "model.weights/")
         Config.path_log   = os.path.join(dir_output, "log.txt")
-        Config.filename_trimmed = os.path.join(data_folder, "trimmed_glove.npz")
+        Config.filename_trimmed = os.path.join(dir_output, "trimmed_glove.npz")
         Config.filename_train = os.path.join(data_folder, "train.txt")
         Config.filename_dev = os.path.join(data_folder, "valid.txt")
         Config.filename_test = os.path.join(data_folder, "test.txt")  
@@ -34,10 +34,10 @@ class Config():
         if not os.path.exists(Config.filename_test):
                 Config.filename_test = Config.filename_dev
         
-        Config.filename_dev = os.path.join(data_folder, "valid.txt")
-        Config.filename_words = os.path.join(data_folder, "words.txt")
-        Config.filename_tags = os.path.join(data_folder, "tags.txt")
-        Config.filename_chars = os.path.join(data_folder, "chars.txt")
+        Config.filename_dev = os.path.join(dir_output, "valid.txt")
+        Config.filename_words = os.path.join(dir_output, "words.txt")
+        Config.filename_tags = os.path.join(dir_output, "tags.txt")
+        Config.filename_chars = os.path.join(dir_output, "chars.txt")
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):
