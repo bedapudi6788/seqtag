@@ -39,3 +39,5 @@ model = predictor.load_model(path_to_config.json)
 predictor.predict(model, ['I', 'am', 'Batman'])
 
 ['O', 'O', 'B-PER']
+
+For an usage example take a look at https://github.com/bedapudi6788/Deep-Segmentation/ . seqtag is used for sentence segmentation in this repo.
