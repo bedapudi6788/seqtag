@@ -34,7 +34,6 @@ class Config():
         if not os.path.exists(Config.filename_test):
                 Config.filename_test = Config.filename_dev
         
-        Config.filename_dev = os.path.join(dir_output, "valid.txt")
         Config.filename_words = os.path.join(dir_output, "words.txt")
         Config.filename_tags = os.path.join(dir_output, "tags.txt")
         Config.filename_chars = os.path.join(dir_output, "chars.txt")
