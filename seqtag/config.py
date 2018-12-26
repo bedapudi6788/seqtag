@@ -7,7 +7,7 @@ from .data_utils import get_trimmed_glove_vectors, load_vocab, \
 
 
 class Config():
-    def __init__(self, data_folder=None, dir_output=None, glove_path=None, load=True, nepochs=15, batch_size=32, dropout=0.2, nepoch_no_imprv=3):
+    def __init__(self, data_folder=None, dir_output=None, glove_path=None, load=True, nepochs=15, batch_size=32, dropout=0.2, nepoch_no_imprv=3, use_chars=True):
         """Initialize hyperparameters and load vocabs
 
         Args:
@@ -37,6 +37,9 @@ class Config():
         Config.filename_words = os.path.join(dir_output, "words.txt")
         Config.filename_tags = os.path.join(dir_output, "tags.txt")
         Config.filename_chars = os.path.join(dir_output, "chars.txt")
+        
+        if not use_chars:
+            Config.use_chars = False
 
         # directory for training outputs
         if not os.path.exists(self.dir_output):

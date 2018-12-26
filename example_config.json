@@ -5,5 +5,6 @@
 	"nepochs": 15,
 	"batch_size": 32,
 	"dropout": 0.2,
-	"nepoch_no_imprv": 3
+	"nepoch_no_imprv": 3,
+	"use_chars": 1
 }

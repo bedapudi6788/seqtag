@@ -120,6 +120,7 @@ class NERModel(BaseModel):
 
         with tf.variable_scope("chars"):
             if self.config.use_chars:
+                print('Using char embeddings')
                 # get char embeddings matrix
                 _char_embeddings = tf.get_variable(
                         name="_char_embeddings",
