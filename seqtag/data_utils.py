@@ -71,7 +71,7 @@ class CoNLLDataset(object):
                         yield words, tags
                         words, tags = [], []
                 else:
-                    ls = line.split(' ')
+                    ls = line.split()
                     word, tag = ls[0],ls[-1]
                     if self.processing_word is not None:
                         word = self.processing_word(word)
@@ -207,10 +207,13 @@ def export_trimmed_glove_vectors(vocab, glove_filename, trimmed_filename, dim):
     embeddings = np.zeros([len(vocab), dim])
     with open(glove_filename) as f:
         for line in f:
-            line = line.strip().split()
+            # using .split(' ') because of the way fasttext's .vec files are present
+            line = line.strip().split(' ')
             word = line[0]
-            embedding = [float(x) for x in line[1:]]
             if word in vocab:
+                # speeding up data building process
+                # converting embedding to float only if it's present in vocab
+                embedding = [float(x) for x in line[1:]]
                 word_idx = vocab[word]
                 embeddings[word_idx] = np.asarray(embedding)
 
