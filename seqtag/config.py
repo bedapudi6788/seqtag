@@ -21,7 +21,7 @@ class Config():
                     dim_word=300,
                     dim_char=100,
                     hidden_size_char=100,
-                    hidden_size_lstm=300
+                    hidden_size_word=300
                 ):
 
         """Initialize hyperparameters and load vocabs
@@ -39,7 +39,7 @@ class Config():
         Config.dim_word = dim_word
         Config.dim_char = dim_char
         Config.hidden_size_char = hidden_size_char
-        Config.hidden_size_lstm = hidden_size_lstm
+        Config.hidden_size_lstm = hidden_size_word
         
         Config.dir_output = dir_output
         Config.data_folder = data_folder
