@@ -7,7 +7,23 @@ from .data_utils import get_trimmed_glove_vectors, load_vocab, \
 
 
 class Config():
-    def __init__(self, data_folder=None, dir_output=None, glove_path=None, load=True, nepochs=15, batch_size=32, dropout=0.2, nepoch_no_imprv=3, use_chars=True):
+    def __init__(
+                    self,
+                    data_folder=None,
+                    dir_output=None,
+                    glove_path=None,
+                    load=True,
+                    nepochs=15,
+                    batch_size=32,
+                    dropout=0.2,
+                    nepoch_no_imprv=3,
+                    use_chars=True,
+                    dim_word=300,
+                    dim_char=100,
+                    hidden_size_char=100,
+                    hidden_size_lstm=300
+                ):
+
         """Initialize hyperparameters and load vocabs
 
         Args:
@@ -20,6 +36,10 @@ class Config():
         Config.batch_size = batch_size
         Config.dropout = dropout
         Config.nepoch_no_imprv = nepoch_no_imprv
+        Config.dim_word = dim_word
+        Config.dim_char = dim_char
+        Config.hidden_size_char = hidden_size_char
+        Config.hidden_size_lstm = hidden_size_lstm
         
         Config.dir_output = dir_output
         Config.data_folder = data_folder
@@ -91,8 +111,8 @@ class Config():
     path_log   = None
 
     # embeddings
-    dim_word = 300
-    dim_char = 100
+    dim_word = None
+    dim_char = None
 
     # glove files
     filename_glove = None
@@ -130,8 +150,8 @@ class Config():
     nepoch_no_imprv  = None
 
     # model hyperparameters
-    hidden_size_char = 100 # lstm on chars
-    hidden_size_lstm = 300 # lstm on word embeddings
+    hidden_size_char = None # lstm on chars
+    hidden_size_lstm = None # lstm on word embeddings
 
     # NOTE: if both chars and crf, only 1.6x slower on GPU
     use_crf = True # if crf, training is 1.7x slower on CPU
